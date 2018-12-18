@@ -39,5 +39,4 @@ V-Model | Boolean.  Drawer Status, collapsed or not.
 | Props    | Description     | Value                                                     |
 |----------|-----------------|-----------------------------------------------------------|
 | Width    | Content Width   | Number, Default: 300                                      |
-| Position | Drawer Position | String, Default: right. Options: right, top, left, bottom |
-|          |                 |                                                           |
+| Position | Drawer Position | String, Default: right. Options: right, top, left, bottom |                                                      |
