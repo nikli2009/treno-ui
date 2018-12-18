@@ -23,6 +23,10 @@
       width: {
         type: Number,
         default: 600
+      },
+      autoHide: {
+        type: Boolean,
+        default: true
       }
     },
     model: {
@@ -38,11 +42,19 @@
       collapse: {
         handler(val, oldVal) {
           console.log('collapsed', val, oldVal);
+          let that = this;
           if(!val && oldVal) {
             // open
             // => add mask
             let mask = document.createElement('div');
             mask.className = 'nik-drawer-mask';
+
+            // if autoHide
+            if(this.autoHide) {
+              mask.onclick = function() {
+                that.$emit('change', true);
+              };
+            }
 
             document.body.appendChild(mask);
 
@@ -76,12 +88,20 @@
     methods: {
       _reactOnMask() {
           let val = this.collapsed;
+          let that = this;
           if(!val) {
               // open
               // => add mask
               let mask = document.createElement('div');
               mask.className = 'nik-drawer-mask';
 
+              // if autoHide
+              if(this.autoHide) {
+                mask.onclick = function() {
+                  that.$emit('change', true);
+                };
+              }
+              
               document.body.appendChild(mask);
 
           } else if(val) {
