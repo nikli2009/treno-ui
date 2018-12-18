@@ -1,5 +1,5 @@
 <template>
-  <div class="nik-drawer" :class="wrapperClass" :style="{ width: width + 'px' }">
+  <div class="nik-drawer" :class="wrapperClass" :style="{ width: drawerWidth }">
     <slot></slot>
     <div class="nik-drawer__operation">
       <div v-if="showClose" class="nik-drawer__operation-close" @click="close">
@@ -20,10 +20,7 @@
         type: String,
         default: 'right'
       },
-      width: {
-        type: Number,
-        default: 600
-      },
+      width: [String, Number],
       autoHide: {
         type: Boolean,
         default: true
@@ -87,6 +84,18 @@
 
         wrapperClass += collapsedClass;
         return wrapperClass
+      },
+      drawerWidth() {
+        let result = '';
+        console.log(typeof this.width);
+        if((typeof this.width) === 'number') {
+          result = this.width + 'px'
+        } else if((typeof this.width) === 'string') {
+          result = this.width
+        } else {
+          result = '600px'
+        }
+        return result
       }
     },
     methods: {
