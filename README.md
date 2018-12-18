@@ -21,7 +21,7 @@ Vue.use(Treno)
 
 ##### Usage
 ```
-<tr-drawer v-mode="collapse" :width="500" position="right">
+<tr-drawer v-model="collapse" :width="500" position="right">
     <!-- slot -->
     <div>
         Slot Content
