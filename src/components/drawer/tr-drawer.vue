@@ -1,8 +1,8 @@
 <template>
-  <div class="nik-drawer" :class="wrapperClass" :style="{ width: drawerWidth }">
+  <div class="tr-drawer" :class="wrapperClass" :style="{ width: drawerWidth }">
     <slot></slot>
-    <div class="nik-drawer__operation">
-      <div v-if="showClose" class="nik-drawer__operation-close" @click="close">
+    <div class="tr-drawer__operation">
+      <div v-if="showClose" class="tr-drawer__operation-close" @click="close">
         <img src="../../assets/close.svg" alt="">
       </div>
     </div>
@@ -28,6 +28,10 @@
       showClose: {
         type: Boolean,
         default: true
+      },
+      customClass: {
+        type: String,
+        default: ''
       }
     },
     model: {
@@ -48,7 +52,7 @@
             // open
             // => add mask
             let mask = document.createElement('div');
-            mask.className = 'nik-drawer-mask';
+            mask.className = 'tr-drawer-mask';
 
             // if autoHide
             if(this.autoHide) {
@@ -62,7 +66,7 @@
           } else if(val && !oldVal) {
             // close
             // => remove mask
-            let masks = document.getElementsByClassName('nik-drawer-mask');
+            let masks = document.getElementsByClassName('tr-drawer-mask');
             for(let mask of masks) {
               document.body.removeChild(mask)
             }
@@ -75,14 +79,17 @@
     computed: {
       wrapperClass() {
         let wrapperClass = '';
-        wrapperClass += `nik-drawer--${this.position} `;
+        wrapperClass += `tr-drawer--${this.position}`;
 
         let collapsedClass = '';
         if(this.collapse) {
-          collapsedClass = 'nik-drawer--collapsed'
+          collapsedClass = ' tr-drawer--collapsed'
         }
 
         wrapperClass += collapsedClass;
+
+        //custom class
+        wrapperClass += ' ' + this.customClass;
         return wrapperClass
       },
       drawerWidth() {
@@ -106,7 +113,7 @@
               // open
               // => add mask
               let mask = document.createElement('div');
-              mask.className = 'nik-drawer-mask';
+              mask.className = 'tr-drawer-mask';
 
               // if autoHide
               if(this.autoHide) {
@@ -120,7 +127,7 @@
           } else if(val) {
               // close
               // => remove mask
-              let masks = document.getElementsByClassName('nik-drawer-mask');
+              let masks = document.getElementsByClassName('tr-drawer-mask');
               for(let mask of masks) {
                   document.body.removeChild(mask)
               }
@@ -138,10 +145,11 @@
   }
 </script>
 <style lang="scss" scoped>
-  .nik-drawer {
+  .tr-drawer {
     position: fixed;
     z-index: 100;
     padding: 20px;
+    box-sizing: border-box;
 
     background-color: #fff;
     box-shadow: -5px 0 40px .5px rgba(0,0,0, 0.2);
@@ -159,7 +167,7 @@
       top: 0;
       bottom: 0;
 
-      .nik-drawer__operation {
+      .tr-drawer__operation {
         position: absolute;
         left: -70px;
         top: 25px;
@@ -192,7 +200,7 @@
 </style>
 
 <style lang="scss">
-  .nik-drawer-mask {
+  .tr-drawer-mask {
     position: fixed;
     top: 0;
     bottom: 0;

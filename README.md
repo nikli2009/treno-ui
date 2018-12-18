@@ -38,5 +38,9 @@ V-Model | Boolean.  Drawer Status, collapsed or not.
 
 | Props    | Description     | Value                                                     |
 |----------|-----------------|-----------------------------------------------------------|
-| Width    | Content Width   | Number, Default: 300                                      |
-| Position | Drawer Position | String, Default: right. Options: right, top, left, bottom |                                                      |
+| Width    | Content Width   | String, Number, Default: '600px'. You can set it to a number, e.g. 600 which turns out to be '600px'. or a string like '30vw' and '50%'                                      |
+| Position | Drawer Position | String, Default: right. Options: right, top, left, bottom |
+| autoHide | If drawer collapse when click on the mask | Boolean, Default: true |
+| showClose | If display Close button | Boolean, Default: true |
+| customClass | Drawer Root Class | String, Default: '', Use it to overwrite default Drawer Style |
+

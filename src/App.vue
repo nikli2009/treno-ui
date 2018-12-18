@@ -1,6 +1,6 @@
 <template>
   <div>
-    <tr-drawer v-model="collapse" width="30vw" :autoHide="false" :showClose="true">
+    <tr-drawer v-model="collapse" width="30vw" :autoHide="false" :showClose="true" customClass="customClass">
       <div>
         <span>Slot Content</span>
       </div>
@@ -25,7 +25,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .button {
     padding: 8px 10px;
     border: 1px solid #333;
@@ -37,6 +37,11 @@ export default {
     &:hover {
       cursor: pointer;
       background-color: #e4e4e4;
+    }
+  }
+  .customClass {
+    &.tr-drawer {
+      padding: 25px;
     }
   }
 </style>
