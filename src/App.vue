@@ -1,6 +1,6 @@
 <template>
   <div>
-    <tr-drawer v-model="collapse">
+    <tr-drawer v-model="collapse" :autoHide="false" :showClose="true">
       <div>
         <span>Slot Content</span>
       </div>

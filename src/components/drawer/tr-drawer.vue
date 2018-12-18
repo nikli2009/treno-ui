@@ -2,7 +2,7 @@
   <div class="nik-drawer" :class="wrapperClass" :style="{ width: width + 'px' }">
     <slot></slot>
     <div class="nik-drawer__operation">
-      <div class="nik-drawer__operation-close" @click="close">
+      <div v-if="showClose" class="nik-drawer__operation-close" @click="close">
         <img src="../../assets/close.svg" alt="">
       </div>
     </div>
@@ -25,6 +25,10 @@
         default: 600
       },
       autoHide: {
+        type: Boolean,
+        default: true
+      },
+      showClose: {
         type: Boolean,
         default: true
       }
@@ -101,7 +105,7 @@
                   that.$emit('change', true);
                 };
               }
-              
+
               document.body.appendChild(mask);
 
           } else if(val) {
