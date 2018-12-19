@@ -32,6 +32,12 @@
       customClass: {
         type: String,
         default: ''
+      },
+      beforeClose: {
+        type: Function,
+        default: function(callback) {
+          callback()
+        }
       }
     },
     model: {
@@ -46,7 +52,7 @@
     watch: {
       collapse: {
         handler(val, oldVal) {
-          console.log('collapsed', val, oldVal);
+          // console.log('collapsed', val, oldVal);
           let that = this;
           if(!val && oldVal) {
             // open
@@ -57,7 +63,7 @@
             // if autoHide
             if(this.autoHide) {
               mask.onclick = function() {
-                that.$emit('change', true);
+                that.close()
               };
             }
 
@@ -84,6 +90,8 @@
         let collapsedClass = '';
         if(this.collapse) {
           collapsedClass = ' tr-drawer--collapsed'
+        } else {
+          this.$emit('open')
         }
 
         wrapperClass += collapsedClass;
@@ -94,7 +102,6 @@
       },
       drawerWidth() {
         let result = '';
-        console.log(typeof this.width);
         if((typeof this.width) === 'number') {
           result = this.width + 'px'
         } else if((typeof this.width) === 'string') {
@@ -118,7 +125,7 @@
               // if autoHide
               if(this.autoHide) {
                 mask.onclick = function() {
-                  that.$emit('change', true);
+                  that.close()
                 };
               }
 
@@ -134,6 +141,10 @@
           }
       },
       close() {
+        this.beforeClose(this._close)
+      },
+      _close() {
+        this.$emit('close');
         this.$emit('change', true)
       }
     },

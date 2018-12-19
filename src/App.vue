@@ -1,11 +1,16 @@
 <template>
   <div>
-    <tr-drawer v-model="collapse" width="30vw" :autoHide="false" :showClose="true" customClass="customClass">
+    <tr-drawer v-model="collapse" width="30vw"
+               :autoHide="false" :showClose="true" customClass="customClass"
+               :beforeClose="beforeDrawerClose"
+               @close="onClose"
+               @open="onOpen"
+    >
       <div>
         <span>Slot Content</span>
       </div>
     </tr-drawer>
-    <div class="button" @click="onDrawerOpen">Open Drawer</div>
+    <div class="button" @click="_onDrawerOpen">Open Drawer</div>
   </div>
 </template>
 
@@ -18,8 +23,17 @@ export default {
     }
   },
   methods: {
-    onDrawerOpen() {
+    _onDrawerOpen() {
       this.collapse = false
+    },
+    beforeDrawerClose(callback) {
+      callback()
+    },
+    onClose() {
+      console.log('onClose')
+    },
+    onOpen() {
+      console.log('onOpen')
     }
   }
 }
