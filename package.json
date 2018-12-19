@@ -1,7 +1,7 @@
 {
   "name": "treno-ui",
   "description": "Vue UI Kit",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "nikk.li <wenyan@zeno.group>",
   "license": "MIT",
   "private": false,
