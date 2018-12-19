@@ -1,6 +1,6 @@
 ## Treno UI Kit
 
-> Lightweight Vue 2.x UI Kit 
+> A lightweight Vue 2.x UI Kit 
 
 ### Installation
 
