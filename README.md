@@ -1,4 +1,6 @@
 ## Treno UI Kit
+[![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][downloads-url]
 
 > A lightweight Vue 2.x UI Kit 
 
