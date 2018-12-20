@@ -55,7 +55,7 @@ V-Model | `Boolean`.  Drawer Status, collapsed or not.
 | open   | Triggers when open the drawer | `Function`, `function() { }` |
 
 
-### LICENSE
+## LICENSE
 
 [MIT](LICENSE)
 
