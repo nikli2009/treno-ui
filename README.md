@@ -1,8 +1,7 @@
-## Treno UI Kit
+## Treno UI
+
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
-
-> A lightweight Vue 2.x UI Kit 
 
 ### Installation
 
@@ -56,6 +55,9 @@ V-Model | `Boolean`.  Drawer Status, collapsed or not.
 | open   | Triggers when open the drawer | `Function`, `function() { }` |
 
 
+### LICENSE
+
+[MIT](LICENSE)
 
 [npm-image]: https://img.shields.io/npm/v/treno-ui.svg
 [npm-url]: https://npmjs.org/package/treno-ui
