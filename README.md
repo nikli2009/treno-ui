@@ -33,7 +33,7 @@ Vue.use(Treno)
 #### API
 
 
-V-Model | `Boolean`.  Drawer Status, collapsed or not.
+V-Model - `Boolean`.  Drawer Status, collapsed or not.
 
 
 ##### Props
