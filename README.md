@@ -54,3 +54,11 @@ V-Model | `Boolean`.  Drawer Status, collapsed or not.
 | :---     | :---            | :---        |
 | close   | Triggers when close the drawer | `Function`, `function() { }` |
 | open   | Triggers when open the drawer | `Function`, `function() { }` |
+
+
+
+[npm-image]: https://img.shields.io/npm/v/serve-static.svg
+[npm-url]: https://npmjs.org/package/treno-ui
+[downloads-image]: https://img.shields.io/npm/dm/serve-static.svg
+[downloads-url]: https://npmjs.org/package/treno-ui
+
