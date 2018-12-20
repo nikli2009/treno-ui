@@ -57,8 +57,8 @@ V-Model | `Boolean`.  Drawer Status, collapsed or not.
 
 
 
-[npm-image]: https://img.shields.io/npm/v/serve-static.svg
+[npm-image]: https://img.shields.io/npm/v/treno-ui.svg
 [npm-url]: https://npmjs.org/package/treno-ui
-[downloads-image]: https://img.shields.io/npm/dm/serve-static.svg
+[downloads-image]: https://img.shields.io/npm/dm/treno-ui.svg
 [downloads-url]: https://npmjs.org/package/treno-ui
 
