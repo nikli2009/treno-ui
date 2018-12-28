@@ -183,8 +183,10 @@
         left: -70px;
         top: 25px;
         img {
+          box-sizing: content-box;
           width: 20px;
           transition: .2s ease-out;
+          color: #979797;
 
           background-color: #fff;
           padding: 12px;

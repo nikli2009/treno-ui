@@ -10,6 +10,7 @@
         <span>Slot Content</span>
       </div>
     </tr-drawer>
+    <!--img v-tr-picture-loading="{ src: '/static/example-picture.jpg' }" alt=""-->
     <div class="button" @click="_onDrawerOpen">Open Drawer</div>
   </div>
 </template>
