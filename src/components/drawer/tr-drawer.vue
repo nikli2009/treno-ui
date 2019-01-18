@@ -158,7 +158,7 @@
 <style lang="scss" scoped>
   .tr-drawer {
     position: fixed;
-    z-index: 100;
+    z-index: 10000;
     padding: 20px;
     box-sizing: border-box;
 
@@ -221,6 +221,6 @@
     left: 0;
     background-color: #000;
     opacity: 0.7;
-    z-index: 99;
+    z-index: 9999;
   }
 </style>
