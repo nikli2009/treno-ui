@@ -30,6 +30,18 @@ Vue.use(Treno)
 </tr-drawer>
 ```
 
+##### Usage(in Nuxt.js)
+```
+<no-ssr>
+  <tr-drawer v-model="collapse" :width="500" position="right">
+      <!-- slot -->
+      <div>
+          Slot Content
+      </div>
+  </tr-drawer>
+</no-ssr>
+```
+
 #### API
 
 
